@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "cassio_raul",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "raul",
+      "email": "raul@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "castro",
+      "email": "castro@gmail.com",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "cassio_raul",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 4
+    }
+  ]
+}

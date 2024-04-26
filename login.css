@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    /* Utilizando linear-gradient para criar um degradê azul */
+    background-image: linear-gradient(to bottom, #032c59, #1882a5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Restante do seu estilo para o body */
+}
+
+
+.container-logo {
+    display: grid;
+    place-items: center; /* Centraliza o conteúdo */
+    height: 0px; /* Define a altura da .container-logo */
+    background-color: aquamarine;
+}
+
+#logo {
+    max-width: 100%;
+    width: 200px;
+    height: 90px;
+}
+
+.container-login{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 100px 200px;
+    width: 980px;
+    height: 400px;
+    opacity: 0.8;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login{
+    width: 490px;
+}
+
+.button-login{
+    width: 400px;
+}
+
+.register{
+    width: 490px;
+}
+
+.title-register{
+    text-align: left;
+}
+
+label{
+    text-align: left;
+}
+
+.title-acesso{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.subtitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-top: 40px;
+    text-align: left;
+    font-size: 25px;
+}
+
+.fw-bold{
+    color: black;
+    text-align: left;
+    font-size: 26px;
+}
