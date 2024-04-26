@@ -1,0 +1,98 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    background-image: linear-gradient(to bottom, #032c59, #1882a5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Restante do seu estilo para o body */
+}
+
+
+.container-logo {
+    display: grid;
+    place-items: center; /* Centraliza o conteúdo */
+    height: 0px; /* Define a altura da .container-logo */
+    background-color: aquamarine;
+}
+
+#logo {
+    max-width: 100%;
+    width: 200px;
+    height: 90px;
+}
+
+.container-login{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 100px auto;
+    width: 480px;
+    height: 420px;
+    opacity: 0.9;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 490px;
+}
+
+.button-login{
+    width: 400px;
+}
+
+.button-register{
+    margin-top: 52px;
+    color: #FFFFFF;
+    width: 400px;
+}
+
+.title-register{
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 26px;
+}
+
+label{
+    text-align: left;
+}
+
+.title-acesso{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.subtitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 40px;
+    text-align: left;
+    font-size: 28px;
+    color: #0b0b0b;
+}
+
+.fw-bold{
+    color: black;
+    text-align: left;
+    font-size: 26px;
+}
+
+.registro{
+    margin-top: 20px;
+}
+
+
+

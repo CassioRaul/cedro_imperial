@@ -6,8 +6,7 @@
 
 body {
     max-width: 100%;
-    /* Utilizando linear-gradient para criar um degradê azul */
-    background-image: linear-gradient(to bottom, #032c59, #1882a5);
+    background-image: linear-gradient(to bottom, #042c39, #0f6ccf);
     background-repeat: no-repeat;
     background-size: cover;
     /* Restante do seu estilo para o body */
@@ -33,10 +32,10 @@ body {
     flex-direction: row;
     max-width: 100%;
     max-height: 100%;
-    margin: 100px 200px;
-    width: 980px;
-    height: 400px;
-    opacity: 0.8;
+    margin: 100px auto;
+    width: 480px;
+    height: 420px;
+    opacity: 0.9;
     justify-content: center;
     text-align: center;
     gap: 20px;
@@ -45,6 +44,10 @@ body {
 }
 
 .login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     width: 490px;
 }
 
@@ -52,12 +55,16 @@ body {
     width: 400px;
 }
 
-.register{
-    width: 490px;
+.button-register{
+    margin-top: 52px;
+    color: #FFFFFF;
+    width: 400px;
 }
 
 .title-register{
-    text-align: left;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 26px;
 }
 
 label{
@@ -65,16 +72,16 @@ label{
 }
 
 .title-acesso{
-    text-align: left;
+    text-align: center;
     margin-top: 20px;
 }
 
 .subtitle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
     margin-top: 40px;
     text-align: left;
-    font-size: 25px;
+    font-size: 28px;
+    color: #0b0b0b;
 }
 
 .fw-bold{
@@ -82,3 +89,10 @@ label{
     text-align: left;
     font-size: 26px;
 }
+
+.registro{
+    margin-top: 20px;
+}
+
+
+

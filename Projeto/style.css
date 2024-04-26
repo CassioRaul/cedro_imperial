@@ -332,3 +332,8 @@ body {
 .add-card button:hover {
   background-color: #0056b3;
 }
+
+.icon-financas{
+  width: 100px;
+  height: 100px;
+}

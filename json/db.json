@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "name": "cassio_raul",
+      "register": "423423",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "rwer",
+      "register": "wrwef",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "dasdas",
+      "register": "6565",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "Raul",
+      "register": "3242",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 4
+    }
+  ],
+  "admins": [
+    {
+      "name": "cassio_raul",
+      "register": "423423",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "cassio",
+      "register": "23232",
+      "email": "cassioraul@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "rrer",
+      "register": "rterte",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "name": "dasd",
+      "register": "24323",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "name": "Cássio",
+      "register": "4444",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "name": "CássioRaul",
+      "register": "5454",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "name": "cassio_raul",
+      "register": "2342342",
+      "email": "cassio@gmail.com",
+      "password": "1234",
+      "id": 7
+    }
+  ]
+}

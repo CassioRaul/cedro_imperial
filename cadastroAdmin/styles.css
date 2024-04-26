@@ -1,0 +1,48 @@
+
+body{
+    background-color: blue;
+   
+
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* O restante do seu CSS aqui */
+
+/* parte da div maior dos botões*/
+.botão{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    opacity: 0.8;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(146, 128, 128, 0.8);
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+
+}
+
+.botãodois{
+    display: flex;
+    background-color: aquamarine;
+    
+}
+
+.divbotão{
+    background-color: blueviolet;
+    display: flex;
+}
