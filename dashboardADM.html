@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados podem ser adicionados aqui */
+        .propostas-container {
+            background-color: #f0f0f0;
+            /* Cor de fundo cinza claro */
+            padding: 20px;
+            /* Adicionando espaçamento interno */
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center mt-4 mb-4">Dashboard do Administrador</h2>
+    <div id="adminInfoContainer"></div>
+    <div id="propostasContainer" class="container-fluid d-flex row justify-content-around propostas-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            getPropostas();
+            renderizarAdminInfo();
+        });
+
+        async function renderizarAdminInfo() {
+            const adminInfoContainer = document.getElementById('adminInfoContainer');
+            try {
+                const response = await axios.get('http://localhost:3000/admins'); // Buscando informações do administrador
+                if (response.data && response.data.length > 0) {
+                    const adminInfo = response.data.find(admin => admin.id === admin.id); // Considerando que o ID do administrador seja '88'
+                    if (adminInfo) {
+                        // Renderizando as informações do administrador
+                        const adminContainer = document.createElement('div');
+                        adminContainer.innerHTML = `<h4>Bem-vindo(a), Administrador(a) ${adminInfo.name}</h4>`;
+                        adminInfoContainer.appendChild(adminContainer);
+                    } else {
+                        adminInfoContainer.innerHTML = '<p>As informações do administrador não puderam ser encontradas.</p>';
+                    }
+                } else {
+                    adminInfoContainer.innerHTML = '<p>As informações do administrador não puderam ser encontradas.</p>';
+                }
+            } catch (error) {
+                console.error('Erro ao buscar informações do administrador:', error);
+                adminInfoContainer.innerHTML = '<p>Erro ao buscar informações do administrador. Tente novamente mais tarde.</p>';
+            }
+        }
+
+        // Função para buscar e renderizar as propostas dos usuários
+        function getPropostas() {
+            axios.get('http://localhost:3000/users')
+                .then(response => {
+                    console.log(response.data);
+                    if (response.data && response.data.length > 0) {
+                        renderPropostas(response.data);
+                    } else {
+                        document.getElementById('propostasContainer').innerHTML = '<p class="text-center">Nenhum usuário encontrado.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar usuários:', error);
+                    document.getElementById('propostasContainer').innerHTML = '<p class="text-center">Erro ao buscar usuários. Tente novamente mais tarde.</p>';
+                });
+        }
+
+        // Função para renderizar as propostas dos usuários na tela
+        function renderPropostas(usuarios) {
+            document.getElementById('propostasContainer').innerHTML = '';
+
+            usuarios.forEach(usuario => {
+                if (usuario.propostas && usuario.propostas.length > 0) {
+                    usuario.propostas.forEach(proposta => {
+                        const propostaHTML = `
+                            <div class="col-md-4 mb-3 p-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Proposta de ${usuario.name}</h5>
+                                        <p>Setor/Departamento: ${proposta['setor/departamento']}</p>
+                                        <p class="card-text">Cargo/Função: ${proposta['cargo/função']}</p>
+                                        <p class="card-text">Descrição: ${proposta['descrição']}</p>
+                                        <p class="card-text">Sugestão de Solução: ${proposta['sugestão']}</p>
+                                        <p class="card-text">Impacto no Trabalho: ${proposta['impacto']}</p>
+                                        <p class="card-text">Anexo: ${proposta['anexo']}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        document.getElementById('propostasContainer').innerHTML += propostaHTML;
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
