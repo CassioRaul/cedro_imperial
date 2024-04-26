@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha o tipo de cadastro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center botão">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4 titulo">Escolha o tipo de cadastro</h2>
+            
+            <div class="row">
+                <!-- Botão para Sou colaborador -->
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-block" onclick="showColaboradorForm()">Sou colaborador</button>
+                </div>
+                <!-- Botão para Sou admin -->
+                <div class="col-md-6">
+                    <button class="btn btn-secondary btn-block" onclick="showAdminForm()">Sou admin</button>
+                </div>
+            </div>
+        </div>
+    </div>        
+
+    <!-- Formulário de cadastro -->
+    <div id="formulario" class="mt-4" style="display: none;">
+        <h4 id="tituloForm" class="text-center">Cadastro</h4>
+        <form id="formCadastro" onsubmit="enviarCadastro(event)">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" name="name" id="nome" placeholder="Digite o nome" required>
+            </div>
+            <div class="form-group">
+                <label for="matricula">Matrícula:</label>
+                <input type="text" class="form-control" name="register" id="matricula" placeholder="Digite a matrícula" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Digite o email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" class="form-control" name="password" id="senha" placeholder="Digite a senha" required>
+            </div>
+            <input type="hidden" name="role" id="role">
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+    </div>
+
+</div>
+
+<!-- jQuery e Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function showColaboradorForm() {
+        document.getElementById('formulario').style.display = 'block';
+        document.getElementById('tituloForm').innerText = 'Cadastre seu colaborador';
+        document.getElementById('role').value = 'user';
+    }
+
+    function showAdminForm() {
+        document.getElementById('formulario').style.display = 'block';
+        document.getElementById('tituloForm').innerText = 'Cadastre seu admin';
+        document.getElementById('role').value = 'admin';
+    }
+
+    function enviarCadastro(event) {
+        event.preventDefault();
+
+        const form = document.getElementById('formCadastro');
+        const formData = new FormData(form);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        fetch(/*'http://localhost:3000/cadastro',*/ {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Cadastro realizado com sucesso!');
+            console.log('Cadastro realizado com sucesso:', data);
+            // Aqui você pode adicionar qualquer ação adicional após o cadastro ser realizado com sucesso
+        })
+        .catch(error => {
+            alert('Erro ao cadastrar: ' + error);
+            console.error('Erro ao cadastrar:', error);
+            // Aqui você pode lidar com o erro de alguma forma
+        });
+    }
+</script>
+
+</body>
+</html>

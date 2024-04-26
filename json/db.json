@@ -1,0 +1,51 @@
+{
+  "cadastroUsers": [
+    {
+      "id": "1",
+      "name": "cassio_raul",
+      "email": "cassio@gmail.com",
+      "register": 345,
+      "password": "$2b$10$3pU8SibKJu69dQ1hDoCi1.PzESuuKjkoY.i23gCnyUyPbKz2ouLqG"
+    },
+    {
+      "id": "71e2",
+      "name": "rty",
+      "register": "123456",
+      "email": "carla.teixeira12@aluno.ce.gov.be",
+      "password": "123456u"
+    },
+    {
+      "id": "b9a1",
+      "name": "Carla",
+      "register": "7",
+      "email": "nabritto436@gmail.com",
+      "password": "456"
+    },
+    {
+      "id": "b686",
+      "name": "Carla",
+      "register": "234",
+      "email": "carlamagalhaes60@gmail.com",
+      "password": "324"
+    },
+    {
+      "id": "68c5",
+      "name": "Carla",
+      "register": "1234",
+      "email": "carlamagalhaes60@gmail.com",
+      "password": "1233"
+    }
+  ],
+  "CadastroAdmin": [
+    {
+      "id": "5c70"
+    },
+    {
+      "id": "9630",
+      "name": "Carla",
+      "register": "1234",
+      "email": "carlamagalhaes60@gmail.com",
+      "password": "121313"
+    }
+  ]
+}
