@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Usuário</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Dashboard do Usuário</h1>
+        <div id="userInfoContainer"></div>
+        <div id="propostasContainer"></div>
+
+        <!-- Botão para o formulário de propostas -->
+        <button id="addPropostaButton" class="btn btn-primary mt-3">Adicionar Proposta</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const userId = localStorage.getItem('userId');
+
+        async function fetchUserInfo(userId) {
+            try {
+                const response = await fetch(`http://localhost:3000/users/${userId}`);
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar informações do usuário');
+                }
+                const userData = await response.json();
+                return userData;
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        async function fetchPropostas(userId) {
+            try {
+                const response = await fetch(`http://localhost:3000/users/${userId}`);
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar propostas do usuário');
+                }
+                const userData = await response.json();
+                return userData.propostas;
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        async function renderizarUserInfo() {
+            const userInfoContainer = document.getElementById('userInfoContainer');
+            const userInfo = await fetchUserInfo(userId);
+
+            if (!userInfo) {
+                userInfoContainer.innerHTML = '<p>As informações do usuário não puderam ser encontradas.</p>';
+                return;
+            }
+
+            const userContainer = document.createElement('div');
+            userContainer.innerHTML = `<p>Bem-vindo(a) ${userInfo.name}</p>`;
+            userInfoContainer.appendChild(userContainer);
+        }
+
+        async function renderizarPropostas() {
+            const propostasContainer = document.getElementById('propostasContainer');
+            const propostas = await fetchPropostas(userId);
+
+            if (!propostas) {
+                propostasContainer.innerHTML = '<p>Parece que você ainda não fez nenhuma proposta.</p>';
+                return;
+            }
+
+            if (propostas.length === 0) {
+                propostasContainer.innerHTML = '<p>Parece que você ainda não fez nenhuma proposta.</p>';
+                return;
+            }
+
+            const propostasList = document.createElement('ul');
+            const propostasHeader = document.createElement('p');
+            propostasHeader.textContent = 'Ideias já Propostas:';
+            propostasContainer.appendChild(propostasHeader);
+
+            propostas.forEach(proposta => {
+                const propostaItem = document.createElement('li');
+                // Exibindo apenas a sugestão e a descrição da proposta
+                propostaItem.textContent = `${proposta.sugestão} - ${proposta.descrição}`;
+                propostasList.appendChild(propostaItem);
+            });
+
+            propostasContainer.appendChild(propostasList);
+        }
+
+        renderizarUserInfo();
+        renderizarPropostas();
+
+        // Evento de clique para o botão de adicionar proposta
+        const addPropostaButton = document.getElementById('addPropostaButton');
+        addPropostaButton.addEventListener('click', function () {
+            // Redireciona para o formulário de propostas
+            window.location.href = './formularioProposta.html';
+        });
+    </script>
+</body>
+
+</html>

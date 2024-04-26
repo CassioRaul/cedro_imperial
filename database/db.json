@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "name": "Castro",
+      "email": "castro@gmail.com",
+      "password": "1234",
+      "id": "3",
+      "propostas": [
+        {
+          "setor/departamento": "a",
+          "cargo/função": "b",
+          "descrição": "c",
+          "sugestão": "d",
+          "impacto": "e",
+          "anexo": "f"
+        },
+        {
+          "setor/departamento": "a",
+          "cargo/função": "b",
+          "descrição": "c",
+          "sugestão": "d",
+          "impacto": "e",
+          "anexo": "f"
+        }
+      ]
+    },
+    {
+      "name": "Carlinha",
+      "email": "car@gmail.com",
+      "password": "1234",
+      "id": "5",
+      "propostas": [
+        {
+          "setor/departamento": "A",
+          "cargo/função": "A",
+          "descrição": "AA",
+          "sugestão": "askj",
+          "impacto": "ieudhewd",
+          "anexo": "287giueh"
+        },
+        {
+          "setor/departamento": "Valor inserido no campo setor/departamento",
+          "cargo/função": "Valor inserido no campo cargo/função",
+          "descrição": "Valor inserido no campo descrição",
+          "sugestão": "Valor inserido no campo sugestão",
+          "impacto": "Valor inserido no campo impacto",
+          "anexo": "Valor inserido no campo anexo"
+        },{
+          "setor/departamento": "d",
+          "cargo/função": "b",
+          "descrição": "tt",
+          "sugestão": "adwec",
+          "impacto": "ieudhd",
+          "anexo": "287cewh"
+        }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "name": "Júlia",
+      "email": "tiajulia@gmail.com",
+      "password": "1234",
+      "id": "88"
+    },
+    {
+      "name": "Carlinha",
+      "email": "tiacarla@gmail.com",
+      "password": "1234",
+      "id": "87"
+    },
+    {
+      "name": "Geisinha",
+      "email": "tiageisa@gmail.com",
+      "password": "1234",
+      "id": "86"
+    }
+  ]
+}
